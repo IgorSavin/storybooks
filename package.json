@@ -1,0 +1,23 @@
+{
+  "name": "storybooks",
+  "version": "1.0.0",
+  "description": "App to share public or write private stories",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IgorSavin/storybooks.git"
+  },
+  "author": "Ihor Savin",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/IgorSavin/storybooks/issues"
+  },
+  "homepage": "https://github.com/IgorSavin/storybooks#readme",
+  "dependencies": {
+    "express": "^4.16.4",
+    "mongoose": "^5.3.10"
+  }
+}
