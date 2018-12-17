@@ -6,8 +6,27 @@ const User = mongoose.model('users');
 const {ensureAuthenticated, ensureGuest} = require('../helpers/auth');
 
 //Stories Index
-router.get('/', (req,res) =>{
-  res.render('stories/index');
+router.get('/', (req, res) =>{
+  Story.find({status:'public'})
+  .populate('user')
+  .then(stories =>{
+    res.render('stories/index',{
+      stories:stories
+    });
+  })
+})
+
+//Show Single Story
+router.get('/show/:id', (req,res) =>{
+  Story.findOne({
+    _id: req.params.id
+  })
+  .populate('user')
+  .then(story =>{
+    res.render('stories/show',{
+      story
+    });
+  })
 })
 
 // Add Story Form
