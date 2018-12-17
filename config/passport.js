@@ -27,7 +27,7 @@ module.exports = function(passport){
 
         //Check for existing user
         User.findOne({
-          googleId: profile.id
+          googleID: profile.id
         }).then(user =>{
           if(user){
             done(null, user);
